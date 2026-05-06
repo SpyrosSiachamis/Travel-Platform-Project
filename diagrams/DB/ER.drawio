@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="q53p9GUQuWoW1YKivlUk">
-    <mxGraphModel dx="2550" dy="1652" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="3142" dy="2006" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -205,7 +205,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="v5uksEQKzkd4TbBIS9ur-82" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;" value="payment_price" vertex="1">
-          <mxGeometry height="40" width="100" x="300" y="81" as="geometry" />
+          <mxGeometry height="40" width="100" x="230" y="94.5" as="geometry" />
         </mxCell>
         <mxCell id="v5uksEQKzkd4TbBIS9ur-83" edge="1" parent="1" source="v5uksEQKzkd4TbBIS9ur-82" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;startArrow=none;startFill=0;" target="v5uksEQKzkd4TbBIS9ur-47">
           <mxGeometry relative="1" as="geometry" />
@@ -214,7 +214,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="v5uksEQKzkd4TbBIS9ur-84" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;" value="date" vertex="1">
-          <mxGeometry height="40" width="100" x="410" y="94.5" as="geometry" />
+          <mxGeometry height="40" width="100" x="360" y="65" as="geometry" />
         </mxCell>
         <mxCell id="v5uksEQKzkd4TbBIS9ur-86" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="Ειδοποίηση" vertex="1">
           <mxGeometry height="150" width="160" x="-260" y="10" as="geometry">
@@ -277,6 +277,15 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="400" y="280" as="sourcePoint" />
             <mxPoint x="480" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5uksEQKzkd4TbBIS9ur-105" parent="1" style="ellipse;whiteSpace=wrap;html=1;align=center;" value="Rating" vertex="1">
+          <mxGeometry height="40" width="100" x="470" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="v5uksEQKzkd4TbBIS9ur-106" edge="1" parent="1" source="v5uksEQKzkd4TbBIS9ur-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.929;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;exitX=0.456;exitY=0.975;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" target="v5uksEQKzkd4TbBIS9ur-47">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="510" y="170" as="sourcePoint" />
+            <mxPoint x="565" y="245" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
