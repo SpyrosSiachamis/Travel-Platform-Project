@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="q53p9GUQuWoW1YKivlUk">
-    <mxGraphModel dx="3142" dy="2006" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2794" dy="1798" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -66,7 +66,7 @@
             <mxRectangle height="50" width="80" x="200" y="480" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="v5uksEQKzkd4TbBIS9ur-35" parent="v5uksEQKzkd4TbBIS9ur-34" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="&lt;u&gt;eventID&lt;br&gt;&lt;/u&gt;title&lt;br&gt;date&lt;div&gt;type&lt;/div&gt;&lt;div&gt;status&lt;/div&gt;&lt;div&gt;max_participants&lt;/div&gt;&lt;div&gt;price (?)&lt;/div&gt;&lt;div&gt;description&lt;/div&gt;&lt;div&gt;schedule&lt;/div&gt;&lt;div&gt;location&lt;/div&gt;&lt;div&gt;time&lt;/div&gt;&lt;div&gt;rating&lt;/div&gt;&lt;div&gt;preview_image&lt;/div&gt;" vertex="1">
+        <mxCell id="v5uksEQKzkd4TbBIS9ur-35" parent="v5uksEQKzkd4TbBIS9ur-34" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="&lt;u&gt;eventID&lt;br&gt;&lt;/u&gt;title&lt;br&gt;date&lt;div&gt;type&lt;/div&gt;&lt;div&gt;status&lt;/div&gt;&lt;div&gt;max_participants&lt;/div&gt;&lt;div&gt;price (?)&lt;/div&gt;&lt;div&gt;description&lt;/div&gt;&lt;div&gt;schedule&lt;/div&gt;&lt;div&gt;addressID (FK)&lt;/div&gt;&lt;div&gt;time&lt;/div&gt;&lt;div&gt;rating&lt;/div&gt;&lt;div&gt;preview_image&lt;/div&gt;" vertex="1">
           <mxGeometry height="200" width="160" y="50" as="geometry" />
         </mxCell>
         <mxCell id="v5uksEQKzkd4TbBIS9ur-42" edge="1" parent="1" source="v5uksEQKzkd4TbBIS9ur-35" style="fontSize=12;html=1;endArrow=ERmany;startArrow=ERmany;rounded=0;entryX=0.858;entryY=1.066;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" target="v5uksEQKzkd4TbBIS9ur-16" value="">
@@ -260,7 +260,7 @@
             <mxPoint x="-60" y="290" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="v5uksEQKzkd4TbBIS9ur-99" connectable="0" parent="v5uksEQKzkd4TbBIS9ur-98" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value=";Έχει" vertex="1">
+        <mxCell id="v5uksEQKzkd4TbBIS9ur-99" connectable="0" parent="v5uksEQKzkd4TbBIS9ur-98" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Έχει" vertex="1">
           <mxGeometry relative="1" x="-0.3573" y="2" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -286,6 +286,20 @@
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="510" y="170" as="sourcePoint" />
             <mxPoint x="565" y="245" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5uksEQKzkd4TbBIS9ur-107" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="Address" vertex="1">
+          <mxGeometry height="138" width="160" x="110" y="490" as="geometry">
+            <mxRectangle height="50" width="80" x="200" y="480" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v5uksEQKzkd4TbBIS9ur-108" parent="v5uksEQKzkd4TbBIS9ur-107" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="&lt;u&gt;addressID&lt;/u&gt;&lt;br&gt;City&lt;div&gt;Street&lt;/div&gt;&lt;div&gt;Number&lt;/div&gt;&lt;div&gt;TK&lt;/div&gt;" vertex="1">
+          <mxGeometry height="88" width="160" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="v5uksEQKzkd4TbBIS9ur-110" edge="1" parent="1" source="v5uksEQKzkd4TbBIS9ur-35" style="edgeStyle=orthogonalEdgeStyle;fontSize=12;html=1;endArrow=ERzeroToMany;endFill=1;startArrow=ERzeroToMany;rounded=0;exitX=1.002;exitY=0.583;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.589;entryY=-0.024;entryDx=0;entryDy=0;entryPerimeter=0;" target="v5uksEQKzkd4TbBIS9ur-107" value="">
+          <mxGeometry height="100" relative="1" width="100" as="geometry">
+            <mxPoint x="240" y="355" as="sourcePoint" />
+            <mxPoint x="340" y="255" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
