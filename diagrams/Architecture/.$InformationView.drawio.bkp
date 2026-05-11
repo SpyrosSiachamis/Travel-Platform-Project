@@ -55,7 +55,10 @@
           <mxGeometry height="60" width="120" x="670" y="175" as="geometry" />
         </mxCell>
         <mxCell id="cU49adkIA0k8HB_ilmj_-48" parent="1" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" value="Εξωτερικό Σύστημα Παροχής Βίντεο" vertex="1">
-          <mxGeometry height="110" width="160" x="1180" y="420" as="geometry" />
+          <mxGeometry height="110" width="160" x="1180" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="YrfHs1Oqd6gtfLHeYrhr-1" parent="1" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Εξωτερικό Σύστημα&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Επεξεργασίας Πληρωμής&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="180" x="1170" y="510" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>

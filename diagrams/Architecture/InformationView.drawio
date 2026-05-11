@@ -1,6 +1,6 @@
 <mxfile host="Electron">
   <diagram name="Page-1" id="LWVoEHIgdcVyGuXH9VBG">
-    <mxGraphModel dx="1276" dy="936" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" math="0" shadow="0">
+    <mxGraphModel dx="1276" dy="808" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -13,7 +13,7 @@
         <mxCell id="cU49adkIA0k8HB_ilmj_-7" parent="cU49adkIA0k8HB_ilmj_-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Σύστημα Ειδοποίησεων" vertex="1">
           <mxGeometry height="60" width="120" x="10" y="175" as="geometry" />
         </mxCell>
-        <mxCell id="cU49adkIA0k8HB_ilmj_-8" parent="cU49adkIA0k8HB_ilmj_-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Σύστημα Συμμετοχής Και Αγαπημένων" vertex="1">
+        <mxCell id="cU49adkIA0k8HB_ilmj_-8" parent="cU49adkIA0k8HB_ilmj_-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Σύστημα Συμμετοχής, Ιστορικού Και Αγαπημένων" vertex="1">
           <mxGeometry height="60" width="120" x="270" y="175" as="geometry" />
         </mxCell>
         <mxCell id="cU49adkIA0k8HB_ilmj_-11" parent="cU49adkIA0k8HB_ilmj_-1" style="whiteSpace=wrap;html=1;" value="Σύστημα Διαχείρισης Περιεχομένου" vertex="1">
