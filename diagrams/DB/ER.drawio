@@ -1,6 +1,6 @@
 <mxfile host="Electron">
   <diagram name="Page-1" id="q53p9GUQuWoW1YKivlUk">
-    <mxGraphModel dx="2587" dy="1725" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2870" dy="1904" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -62,12 +62,12 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="v5uksEQKzkd4TbBIS9ur-34" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="Εκδήλωση" vertex="1">
-          <mxGeometry height="250" width="160" x="5.5" y="180" as="geometry">
+          <mxGeometry height="280" width="160" x="5.5" y="180" as="geometry">
             <mxRectangle height="50" width="80" x="200" y="480" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="v5uksEQKzkd4TbBIS9ur-35" parent="v5uksEQKzkd4TbBIS9ur-34" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="&lt;u&gt;eventID&lt;/u&gt;&lt;div&gt;tripCreatorID (FK)&lt;br&gt;title&lt;br&gt;date&lt;div&gt;type&lt;/div&gt;&lt;div&gt;status&lt;/div&gt;&lt;div&gt;max_participants&lt;/div&gt;&lt;div&gt;price (?)&lt;/div&gt;&lt;div&gt;description&lt;/div&gt;&lt;div&gt;schedule&lt;/div&gt;&lt;div&gt;addressID (FK)&lt;/div&gt;&lt;div&gt;time&lt;/div&gt;&lt;div&gt;rating&lt;/div&gt;&lt;div&gt;preview_image&lt;/div&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="200" width="160" y="50" as="geometry" />
+        <mxCell id="v5uksEQKzkd4TbBIS9ur-35" parent="v5uksEQKzkd4TbBIS9ur-34" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" value="&lt;u&gt;eventID&lt;/u&gt;&lt;div&gt;tripCreatorID (FK)&lt;br&gt;title&lt;br&gt;date&lt;div&gt;type&lt;/div&gt;&lt;div&gt;status&lt;/div&gt;&lt;div&gt;max_participants&lt;/div&gt;&lt;div&gt;price (?)&lt;/div&gt;&lt;div&gt;participation_count&lt;/div&gt;&lt;div&gt;description&lt;/div&gt;&lt;div&gt;schedule&lt;/div&gt;&lt;div&gt;addressID (FK)&lt;/div&gt;&lt;div&gt;time&lt;/div&gt;&lt;div&gt;rating&lt;/div&gt;&lt;div&gt;preview_image&lt;/div&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="230" width="160" y="50" as="geometry" />
         </mxCell>
         <mxCell id="v5uksEQKzkd4TbBIS9ur-48" edge="1" parent="1" source="v5uksEQKzkd4TbBIS9ur-34" style="fontSize=12;html=1;endArrow=ERzeroToMany;endFill=1;startArrow=ERzeroToMany;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.979;exitY=0.093;exitDx=0;exitDy=0;exitPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="v5uksEQKzkd4TbBIS9ur-16" value="">
           <mxGeometry height="100" relative="1" width="100" as="geometry">
@@ -237,7 +237,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="QP6uEiThMaZaPcCcPOjz-1" parent="1" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" value="Συμμετοχή" vertex="1">
-          <mxGeometry height="144" width="160" x="315" y="18" as="geometry">
+          <mxGeometry height="144" width="160" x="315" y="16" as="geometry">
             <mxRectangle height="50" width="80" x="200" y="480" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
