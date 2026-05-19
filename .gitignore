@@ -1,1 +1,8 @@
 spec.pdf
+HY-351-PROJECT-2026/mysql_data/
+HY-351-PROJECT-2026/backend/dist/
+HY-351-PROJECT-2026/backend/node_modules/
+HY-351-PROJECT-2026/frontend/node_modules/
+HY-351-PROJECT-2026/frontend/.next/
+HY-351-PROJECT-2026/**/.env
+HY-351-PROJECT-2026/**/.env.*
