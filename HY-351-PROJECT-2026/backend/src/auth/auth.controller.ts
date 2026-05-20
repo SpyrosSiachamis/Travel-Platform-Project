@@ -13,14 +13,22 @@ export class AuthController {
         if (!user) {
             throw new UnauthorizedException('Invalid User Credentials');
         }
-        const userSession: AuthUser = {
-            user_id: user.user_id,
-            username: user.username,
-            role: user.role
-        }
-        session.user = userSession;
+        session.user = user;
         return {
             message: "Login completed",
+            user: session.user
+        };
+    };
+
+    @Get('session')
+    async getSession(@Session() session:Record<string, any>)
+    {
+        if(!session || !session.user)
+        {
+            throw new UnauthorizedException('User is not logged in');
+        }
+        return {
+            authenticated: true,
             user: session.user
         };
     };
