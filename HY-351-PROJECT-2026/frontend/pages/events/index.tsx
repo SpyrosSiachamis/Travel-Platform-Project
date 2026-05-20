@@ -24,76 +24,76 @@ type EventsPageProps = {
   events: EventItem[];
 };
 
-function Header() {
-  return (
-    <header style={{
-      height: '72px',
-      display: 'flex',
-      alignItems: 'center',
-      borderBottom: '1px solid #ddd',
-      background: 'white',
-      padding: '0 28px',
-      gap: '28px',
-      fontFamily: 'Arial, sans-serif'
-    }}>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px', width: '180px' }}>
-        <div style={{
-          width: '55px',
-          height: '55px',
-          border: '6px solid black',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          fontWeight: 'bold',
-          fontSize: '26px'
-        }}>
-          M
-        </div>
-        <div style={{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '22px', lineHeight: '25px' }}>
-          Travel<br />Heraklion
-        </div>
-      </div>
+// function Header() {
+//   return (
+//     <header style={{
+//       height: '72px',
+//       display: 'flex',
+//       alignItems: 'center',
+//       borderBottom: '1px solid #ddd',
+//       background: 'white',
+//       padding: '0 28px',
+//       gap: '28px',
+//       fontFamily: 'Arial, sans-serif'
+//     }}>
+//       <div style={{ display: 'flex', alignItems: 'center', gap: '16px', width: '180px' }}>
+//         <div style={{
+//           width: '55px',
+//           height: '55px',
+//           border: '6px solid black',
+//           display: 'flex',
+//           alignItems: 'center',
+//           justifyContent: 'center',
+//           fontWeight: 'bold',
+//           fontSize: '26px'
+//         }}>
+//           M
+//         </div>
+//         <div style={{ fontWeight: 'bold', fontStyle: 'italic', fontSize: '22px', lineHeight: '25px' }}>
+//           Travel<br />Heraklion
+//         </div>
+//       </div>
 
-      <nav style={{ display: 'flex', gap: '14px', flex: 1 }}>
-        <Link href="/" style={navButton}>Home</Link>
-        <Link href="/events" style={navButton}>Events</Link>
-      </nav>
+//       <nav style={{ display: 'flex', gap: '14px', flex: 1 }}>
+//         <Link href="/" style={navButton}>Home</Link>
+//         <Link href="/events" style={navButton}>Events</Link>
+//       </nav>
 
-      <nav style={{ display: 'flex', gap: '14px' }}>
-        <button style={navButton}>Favourites</button>
-        <button style={navButton}>History</button>
-        <button style={navButton}>
-          Notifications <span style={{
-            display: 'inline-block',
-            width: 8,
-            height: 8,
-            background: '#c60000',
-            borderRadius: '50%',
-            marginLeft: 4
-          }} />
-        </button>
-        <Link href="/events/add" style={navButton}>Add Event</Link>
-        <button style={navButton}>Profile</button>
-        <button style={navButton}>Settings</button>
-      </nav>
-    </header>
-  );
-}
+//       <nav style={{ display: 'flex', gap: '14px' }}>
+//         <button style={navButton}>Favourites</button>
+//         <button style={navButton}>History</button>
+//         <button style={navButton}>
+//           Notifications <span style={{
+//             display: 'inline-block',
+//             width: 8,
+//             height: 8,
+//             background: '#c60000',
+//             borderRadius: '50%',
+//             marginLeft: 4
+//           }} />
+//         </button>
+//         <Link href="/events/add" style={navButton}>Add Event</Link>
+//         <button style={navButton}>Profile</button>
+//         <button style={navButton}>Settings</button>
+//       </nav>
+//     </header>
+//   );
+// }
 
-const navButton: React.CSSProperties = {
-  minWidth: '95px',
-  height: '32px',
-  border: '1.5px solid black',
-  borderRadius: '9px',
-  background: 'white',
-  color: 'black',
-  textDecoration: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  fontSize: '14px',
-  cursor: 'pointer'
-};
+// const navButton: React.CSSProperties = {
+//   minWidth: '95px',
+//   height: '32px',
+//   border: '1.5px solid black',
+//   borderRadius: '9px',
+//   background: 'white',
+//   color: 'black',
+//   textDecoration: 'none',
+//   display: 'flex',
+//   alignItems: 'center',
+//   justifyContent: 'center',
+//   fontSize: '14px',
+//   cursor: 'pointer'
+// };
 
 export default function EventsPage({ events }: EventsPageProps) {
   const topPick = events[events.length - 1] || events[0];
@@ -102,8 +102,6 @@ export default function EventsPage({ events }: EventsPageProps) {
     <>
 
       <main style={{ fontFamily: 'Arial, sans-serif', minHeight: '100vh', background: 'white' }}>
-        <Header />
-
         <section style={{
           height: '260px',
           backgroundImage: 'url("/images/events-hero.jpg")',
