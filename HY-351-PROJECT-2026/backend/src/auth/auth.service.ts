@@ -1,7 +1,6 @@
 import { Injectable } from "@nestjs/common";
 import { DatabaseService } from "src/db/db.service";
-import { user } from "./auth.model";
-import { query } from "express";
+import { AuthUser, user } from "./auth.model";
 @Injectable()
 export class AuthService {
     constructor(private readonly db: DatabaseService) { }
@@ -29,7 +28,13 @@ export class AuthService {
             if (results.length === 0) {
                 return null;
             }
-            return results[0];
+            const returnedUser: AuthUser = results[0];
+            const authUser: AuthUser = {
+                user_id: returnedUser.user_id,
+                username: returnedUser.username,
+                role: returnedUser.role
+            };
+            return authUser;
         }
         catch (error) {
                 console.error('DB connection error:',error);
