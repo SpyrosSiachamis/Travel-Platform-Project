@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { DatabaseService } from '../db/db.service';
-
+import { Event } from './event.model';
 @Injectable()
 export class EventsService {
     constructor(private readonly db: DatabaseService) {}
