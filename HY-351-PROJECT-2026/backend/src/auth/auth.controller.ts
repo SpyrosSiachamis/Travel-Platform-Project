@@ -9,11 +9,10 @@ export class AuthController {
     @Post('login')
     async authenticateUser(@Body() userData: user, @Session() session: Record<string, any>) {
         const user: AuthUser = await this.authService.authenticateUser(userData);
-        console.log(user);
         if (!user) {
             throw new UnauthorizedException('Invalid User Credentials');
         }
-        session.user = user;
+        session.user = user; 
         return {
             message: "Login completed",
             user: session.user
@@ -32,4 +31,25 @@ export class AuthController {
             user: session.user
         };
     };
+
+    @Post('logout')
+    async logout(@Session() session:Record<string, any>) {
+        if(!session || !session.user)
+        {
+            throw new UnauthorizedException('User is not logged in');
+        }
+        //nest session.destroy inside promise
+        await new Promise<void>((resolve,reject) =>{
+            session.destroy((err) =>{
+                if(err) {
+                    return reject(err);
+                }
+                resolve();
+            });
+        });
+        return {
+            success: true,
+            message: "User logged out"
+        };
+    }
 }
