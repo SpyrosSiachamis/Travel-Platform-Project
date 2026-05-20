@@ -1,0 +1,45 @@
+.maincontainer {
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    background-image: url('/images/beach.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: calc(100vh - 75px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.asidesection {
+    display: flex;
+    min-height: calc(100vh - 75px);
+    background: #FFFFFF;
+    flex-direction:column;
+    align-items:flex-end;
+    padding: 5px;
+    box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.15);
+    width: 20%;
+    min-width: 280px;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.welcome{
+    border-bottom: 1px solid #ECECEC;
+    width: 100%;
+}
+
+.welcometext1{
+    font-size: x-large;
+    font-style: italic;
+    text-align: left;
+    margin:0;
+}
+
+.welcometext2{
+    font-style: italic;
+    text-align: left;
+    margin:0;
+}
