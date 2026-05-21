@@ -22,13 +22,15 @@ export class AuthController {
     @Get('session')
     async getSession(@Session() session:Record<string, any>)
     {
+        console.log(session);
         if(!session || !session.user)
         {
             throw new UnauthorizedException('User is not logged in');
         }
         return {
-            authenticated: true,
-            user: session.user
+            isLoggedIn: true,
+            username: session.user.username,
+            role: session.user.role
         };
     };
 
