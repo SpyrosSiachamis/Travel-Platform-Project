@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import session = require('express-session');
+import session = require('express-session'); // I put session from express to work with navbar state. I learn't this through hy359 and since it was part of express which nestjs is built up on i used it.
 
 // entry point of app, confused me originally
 async function bootstrap() {
