@@ -41,4 +41,19 @@ export class AuthService {
                 throw error;
         }
     }
+
+    async logoutUser(session: Record<string,any>){
+        await new Promise<void>((resolve,reject) =>{
+            session.destroy((err) =>{
+                if(err) {
+                    return reject(err);
+                }
+                resolve();
+            });
+        });
+        return {
+            success: true,
+            message: "User logged out"
+        };
+    }
 }

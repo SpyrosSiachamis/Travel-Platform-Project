@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
 import { EventsService } from './events.service';
+import { Event } from './event.model';
 
 @Controller('events')
 export class EventsController {
@@ -16,8 +17,8 @@ export class EventsController {
         return result[0];
     }
 
-    @Post()
-    create(@Body() body: any) {
-        return this.eventsService.create(body);
+    @Post('/add')
+    create(@Body() event: Event) {
+        return this.eventsService.create(event);
     }
 }

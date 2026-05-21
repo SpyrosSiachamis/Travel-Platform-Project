@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import NavBar from "@/components/NavBar";
-import { AuthProvider } from "@/context/authContext";
+import { AuthProvider } from "@/context/AuthContext";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 

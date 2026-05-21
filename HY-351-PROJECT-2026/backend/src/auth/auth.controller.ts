@@ -22,7 +22,6 @@ export class AuthController {
     @Get('session')
     async getSession(@Session() session:Record<string, any>)
     {
-        console.log(session);
         if(!session || !session.user)
         {
             throw new UnauthorizedException('User is not logged in');
@@ -40,18 +39,13 @@ export class AuthController {
         {
             throw new UnauthorizedException('User is not logged in');
         }
-        //nest session.destroy inside promise
-        await new Promise<void>((resolve,reject) =>{
-            session.destroy((err) =>{
-                if(err) {
-                    return reject(err);
-                }
-                resolve();
-            });
-        });
+        const result = await this.authService.logoutUser(session); 
+        
+        if(!result) {
+            throw new Error('Issue Logging out');
+        }
         return {
-            success: true,
-            message: "User logged out"
-        };
+            message: "Logout successful"
+        }
     }
 }
