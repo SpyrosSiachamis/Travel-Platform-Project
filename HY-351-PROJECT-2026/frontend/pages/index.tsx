@@ -18,6 +18,11 @@ type AuthUser = {
   role: string;
 }
 
+type AuthResponse = {
+  message: string;
+  user: AuthUser;
+}
+
 // type to send to backend from login form
 type user = {
   username: string;
@@ -114,12 +119,25 @@ export default function Home() {
   const { user } = useAuth();
   const router = useRouter();
 
-  useEffect(() => {
-    if (user.isLoggedIn) {
-      router.push('/events');
-    }
-  }, [user.isLoggedIn, router]);
 
+  if (user.isLoggedIn) {
+    router.push('/events')
+  }
+  else {
+    return (
+      <>
+        <Head>
+          <title>HY351 APP</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" href="/logo.svg" />
+        </Head>
+        <div className={styles.maincontainer}>
+          <AsideColumn />
+          <Main />
+        </div>
+      </>
+    );
+  }
   return (
     <>
       <Head>
@@ -148,8 +166,8 @@ export async function authenticate(userData: user) {
     if (!response.ok) {
       throw new Error('Failure logging in');
     }
-    const result: AuthUser = await response.json();
-    return result;
+    const result: AuthResponse = await response.json();
+    return result.user;
   } catch (error) {
     console.error(error);
   }
