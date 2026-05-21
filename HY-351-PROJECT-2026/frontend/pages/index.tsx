@@ -1,38 +1,70 @@
 /* eslint-disable indent */
 import Head from "next/head";
 import styles from "@/styles/Home.module.css"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useAuth } from "@/context/authContext";
+import { useRouter } from 'next/router'
+
 type InputType = {
   id: string;
   iType: string;
   text: string;
 }
 
+type AuthUser = {
+  user_id: number;
+  username: string;
+  role: string;
+}
+
+// type to send to backend from login form
+type user = {
+  username: string;
+  password: string;
+}
+
 export function LoginForm() {
+
   const [passwordToggle, setPasswordToggle] = useState<string>("password");
   const [btnText, setBtnText] = useState<string>("Show");
-
+  const { login } = useAuth();
+  const router = useRouter();
   const setPasswordView = () => {
     if (passwordToggle === "password") {
       setPasswordToggle("text");
       setBtnText("Hide")
     }
     else {
-      setPasswordToggle("password");
+      setPasswordToggle("password")
       setBtnText("Show")
     }
   }
+
+  async function submitHandler(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const user = Object.fromEntries(new FormData(form)) as user;
+    const result = await authenticate(user);
+    if (result) {
+      login(result.role, result.username);
+      router.push('/events');
+    }
+    else {
+      console.log('fail');
+    }
+  }
+
   return (
-      <form action="/login" className={styles.loginform}>
-        <InputField id="username" iType="text" text="Username" />
-        <br></br>
-        <InputField id="password" iType={passwordToggle} text="Password" />
-        <button type="button" className={styles.passwordtoggle} onClick={setPasswordView}>{btnText} Password</button>
-        <div className={styles.submitdiv}>
-          <button type="submit" className={styles.submitbtn}>Login</button>
-        </div>
-      </form>
+    <form onSubmit={submitHandler} className={styles.loginform} id="loginForm">
+      <InputField id="username" iType="text" text="Username" />
+      <br></br>
+      <InputField id="password" iType={passwordToggle} text="Password" />
+      <button type="button" className={styles.passwordtoggle} onClick={setPasswordView}>{btnText} Password</button>
+      <div className={styles.submitdiv}>
+        <button type="submit" className={styles.submitbtn}>Login</button>
+      </div>
+    </form>
   );
 }
 
@@ -79,6 +111,15 @@ export function Main() {
 }
 
 export default function Home() {
+  const { user } = useAuth();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (user.isLoggedIn) {
+      router.push('/events');
+    }
+  }, [user.isLoggedIn, router]);
+
   return (
     <>
       <Head>
@@ -92,4 +133,24 @@ export default function Home() {
       </div>
     </>
   );
+}
+
+export async function authenticate(userData: user) {
+  try {
+    const response = await fetch('http://localhost:5000/auth/login', {
+      method: "POST",
+      credentials: "include",
+      body: JSON.stringify(userData),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    });
+    if (!response.ok) {
+      throw new Error('Failure logging in');
+    }
+    const result: AuthUser = await response.json();
+    return result;
+  } catch (error) {
+    console.error(error);
+  }
 }
