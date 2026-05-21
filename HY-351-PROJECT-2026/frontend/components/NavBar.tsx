@@ -75,7 +75,7 @@ export default function NavBar() {
                         <NavBtn label='Favourites' path='/' />
                         <NavBtn label='History' path='/' />
                         <NavBtn label='Notifications' path='/' />
-                        <NavBtn label='Add Event' path='/' />
+                        <NavBtn label='Add Event' path='/events/add' />
                         <NavBtn label='Profile' path='/' />
                         <NavBtn label='Settings' path='/' />
                     </nav>
