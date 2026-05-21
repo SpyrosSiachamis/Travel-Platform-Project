@@ -15,31 +15,119 @@
     display: flex;
     min-height: calc(100vh - 75px);
     background: #FFFFFF;
-    flex-direction:column;
-    align-items:flex-end;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 5px;
     box-shadow: 5px 0px 15px rgba(0, 0, 0, 0.15);
     width: 20%;
     min-width: 280px;
+    gap: 5px;
     height: 100%;
     overflow: hidden;
     box-sizing: border-box;
 }
 
-.welcome{
+.welcome {
     border-bottom: 1px solid #ECECEC;
     width: 100%;
 }
 
-.welcometext1{
+.welcometext1 {
     font-size: x-large;
     font-style: italic;
     text-align: left;
-    margin:0;
+    margin: 0;
 }
 
-.welcometext2{
+.welcometext2 {
     font-style: italic;
     text-align: left;
-    margin:0;
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.logindiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    border-bottom: 1px solid #ECECEC;
+    padding-bottom: 10%;
+}
+
+.loginform {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap:5px;
+}
+
+.inputdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    /* padding: 5px; */
+    gap:10px;
+}
+
+.inputlabel {
+    font-family: 'Google Sans Flex', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.inputfield {
+    width: 100%;
+    box-sizing: border-box;
+
+    height: 38px;
+    min-height:15px;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+.passwordtoggle {
+    font-family: 'Google Sans Flex', Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-weight:bolder;
+    font-size: 15px;
+    line-height: 19px;
+    text-align: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+.submitbtn {
+    width: 225px;
+    height: 31px;
+    background: #00ae5d;
+    border-radius: 15px;
+    color:white;
+    font-size: larger;
+    font-family: 'Google Sans Flex', Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    border: none;
+}
+
+.submitdiv
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.centercontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
