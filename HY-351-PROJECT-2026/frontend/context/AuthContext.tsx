@@ -40,7 +40,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
                 });
                 if (response.ok) {
                     const data: AuthUser = await response.json();
-                    console.log('ok');
                     setUser({
                         isLoggedIn: true,
                         username: data.username,
