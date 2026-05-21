@@ -1,7 +1,8 @@
 /* eslint-disable indent */
-import { useState, useEffect } from 'react';
+
 import Link from 'next/link';
 // import { useRouter } from 'next/router';
+import { useAuth, UserState } from '@/context/authContext';
 import styles from '../styles/NavBar.module.css'
 type NavItem = {
     label: string;
@@ -15,17 +16,10 @@ export function NavBtn({ label, path }: NavItem) {
         </>
     );
 }
-type UserState = {
-    isLoggedIn: boolean;
-    role: string;
-    username?: string;
-}
+
 
 export default function NavBar() {
-    const [user, setUser] = useState<UserState>({
-        isLoggedIn: false,
-        role: 'Guest',
-    });
+    const {user} = useAuth();
     if (user.role === 'Guest') {
         return (
             <>
@@ -89,5 +83,14 @@ export default function NavBar() {
             </>
         );
     }
-    return null;
+    return (
+        <header className={styles.navbar}>
+            <div className={styles.leftside}>
+                <div className={styles.logo}></div>
+                <div className={styles.title}>Travel<br></br>Heraklion</div>
+                <nav className={styles.leftbtns}></nav>
+            </div>
+            <nav className={styles.rightbtns}></nav>
+        </header>
+    );
 }
