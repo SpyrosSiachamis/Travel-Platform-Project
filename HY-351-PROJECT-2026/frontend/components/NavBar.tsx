@@ -1,13 +1,25 @@
 /* eslint-disable indent */
 
 import Link from 'next/link';
-// import { useRouter } from 'next/router';
-import { useAuth, UserState } from '@/context/authContext';
+import { useRouter } from 'next/router';
 import styles from '../styles/NavBar.module.css'
+import { useAuth, UserState } from '@/context/AuthContext';
+
+type AuthUser = {
+    user_id?: number;
+    username: string;
+    role: string;
+};
+
 type NavItem = {
     label: string;
     path: string;
 };
+
+type AuthResponse = {
+    message: string;
+    user?: AuthUser;
+}
 
 export function NavBtn({ label, path }: NavItem) {
     return (
@@ -18,8 +30,36 @@ export function NavBtn({ label, path }: NavItem) {
 }
 
 
+
+export function NavLogout({ user }: { user: AuthUser }) {
+    const router = useRouter();
+    const { logout } = useAuth();
+    async function handleLogout() {
+        if (!user || user.role === 'Guest') {
+            return;
+        }
+        try {
+            const result = await logoutAuthenticate();
+            if (!result) {
+                throw new Error('Error logging out');
+            }
+            logout();
+            router.replace('/');
+        } catch (error) {
+            console.error(error);
+        }
+
+    }
+    return (
+        <>
+            <button type="button" className={styles.navbtn} onClick={handleLogout}>Logout</button>
+        </>
+    )
+}
+
+
 export default function NavBar() {
-    const {user} = useAuth();
+    const { user } = useAuth();
     if (user.role === 'Guest') {
         return (
             <>
@@ -54,12 +94,13 @@ export default function NavBar() {
                         <NavBtn label='Notifications' path='/' />
                         <NavBtn label='Profile' path='/' />
                         <NavBtn label='Settings' path='/' />
+                        <NavLogout user={user as AuthUser}/>
                     </nav>
                 </header>
             </>
         );
     }
-    if(user.role ==='trip_creator'){
+    if (user.role === 'trip_creator') {
         return (
             <>
                 <header className={styles.navbar}>
@@ -78,6 +119,7 @@ export default function NavBar() {
                         <NavBtn label='Add Event' path='/events/add' />
                         <NavBtn label='Profile' path='/' />
                         <NavBtn label='Settings' path='/' />
+                        <NavLogout user={user as AuthUser}/>
                     </nav>
                 </header>
             </>
@@ -93,4 +135,24 @@ export default function NavBar() {
             <nav className={styles.rightbtns}></nav>
         </header>
     );
+}
+
+export async function logoutAuthenticate() {
+    try {
+        const response = await fetch('http://localhost:5000/auth/logout', {
+            method: "POST",
+            credentials: "include",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        if (!response.ok) {
+            throw new Error('Error logging out');
+        }
+        const result: AuthResponse = await response.json();
+        return result.message;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
 }

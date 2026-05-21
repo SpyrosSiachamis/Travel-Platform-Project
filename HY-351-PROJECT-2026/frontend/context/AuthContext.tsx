@@ -1,6 +1,8 @@
 /* eslint-disable indent */
-import { useState, useContext, ReactNode, createContext, useEffect } from "react";
 
+// I made this authcontext file to track global state for the user types. 
+import { useState, useContext, ReactNode, createContext, useEffect } from "react";
+import Router, { useRouter } from "next/router";
 export type UserState = {
     isLoggedIn: boolean;
     role: string;
@@ -26,6 +28,7 @@ type AuthProviderProps = {
 
 // provide the global states for the project
 export function AuthProvider({ children }: AuthProviderProps) {
+    const router = useRouter();
     const [user, setUser] = useState<UserState>({
         isLoggedIn: false,
         role: 'Guest'
@@ -49,6 +52,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
                     console.log("No active session");
                 }
             } catch (error) {
+                router.replace('/');
                 console.log("No active session", error);
             }
         };
@@ -80,7 +84,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
 export function useAuth() {
     const context = useContext(AuthContext);
-
     if (context === undefined) {
         throw new Error('useAuth should run in AuthProvider');
     }

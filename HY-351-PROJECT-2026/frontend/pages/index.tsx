@@ -3,7 +3,7 @@ import Head from "next/head";
 import styles from "@/styles/Home.module.css"
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useAuth } from "@/context/authContext";
+import { useAuth } from "@/context/AuthContext";
 import { useRouter } from 'next/router'
 
 type InputType = {
