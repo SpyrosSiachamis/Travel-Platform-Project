@@ -1,0 +1,139 @@
+.mainsection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 75px);
+    overflow-y: hidden;
+    padding: 0px;
+    position: relative;
+}
+
+.backgrounddiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/koules.jpg');
+    background-size: cover;
+    filter: blur(2px);
+    width: 100%;
+    height: 100%;
+    height: calc(100vh - 75px);
+    z-index: 1;
+}
+
+.addeventdiv {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 75%;
+    max-width: 50%;
+    min-width: 500px;
+    background-color: white;
+    box-shadow: 0px 0px 8px black;
+    padding: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.addeventform {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.formtitle {
+    font-size: large;
+    font-family: 'Inter', 'Courier New', Courier, monospace;
+    font-weight: normal;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 0px;
+    border-bottom: 1px solid #ECECEC;
+}
+
+.formcontainer {
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: 20px;
+}
+
+.inputdiv {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 10px;
+}
+
+.inputlabel {
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inputfield {
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    padding: 8px 10px;
+    background-color: #EBEBEB;
+    border: 1px solid #ECECEC;
+    border-radius: 10px;
+    width: 70%;
+}
+
+.inputfields {
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 100%;
+    gap: 5px;
+}
+
+.griditem {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 5%;
+    margin-top: 0px;
+}
+
+.descriptionfield {
+    background: #EBEBEB;
+    border: 1px solid #ECECEC;
+    border-radius: 10px;
+    padding: 5px;
+    resize: none;
+}
+
+.addeventcontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.addeventbtn {
+    padding: 0px 102px;
+    gap: 19px;
+    width: 359px;
+    height: 40px;
+    background: #009951;
+    border-radius: 15px;
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+    border: none;
+}
