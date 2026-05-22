@@ -1,5 +1,31 @@
 /* eslint-disable indent */
 import styles from '@/styles/AddEvent.module.css'
+import { useEffect, useState } from 'react';
+
+type EventItem = {
+    title: string;
+    event_date: string;
+    max_participants: number;
+    type: string;
+
+    trip_creator_id?: number;
+    event_time?: string;
+    status?: string;
+    price?: string | number;
+    description?: string;
+    schedule?: string;
+    address_id?: number;
+    rating?: number;
+    preview_image?: string | null;
+};
+
+export enum EventTypes { 
+    Other = "Other",
+    NightLife = "Night Life",
+    City = "City",
+    Nature = "Nature",
+    Cultural = "Cultural",
+}
 
 type InputType = {
     id: string;
@@ -18,10 +44,9 @@ export function InputField(type: InputType) {
     );
 }
 
-export function AddEventBtn()
-{
+export function AddEventBtn() {
     return (
-        <input type="submit" value="Add Event" className={styles.addeventbtn}/>
+        <input type="submit" value="Add Event" className={styles.addeventbtn} />
     )
 }
 
@@ -42,23 +67,70 @@ export function FileUploadField() {
 export function DescriptionField() {
     return (
         <>
-        <label htmlFor='description' id='descriptionLabel' className={styles.inputlabel}>Description</label>
+            <label htmlFor='description' id='descriptionLabel' className={styles.inputlabel}>Description</label>
             <textarea
                 id="description"
                 name="description"
                 placeholder='Enter event description'
                 className={styles.descriptionfield}
-            /> 
+            />
         </>
     );
 }
 
+export function SelectField({ id, text, options }: SelectType) {
+    return (
+        <div className={styles.inputdiv}>
+            <label htmlFor={id} className={styles.inputlabel}>{text}</label>
+            <select id={id} name={id} className={styles.inputfield}>
+                {options.map((option) => (
+                    <option key={option} value={option}>{option}</option>
+                ))}
+            </select>
+        </div>
+    );
+}
+
+type SelectType = {
+    id: string;
+    text: string;
+    options: string[];
+};
+
 export function AddEventForm() {
+    const [submit, setSubmit] = useState<number>(0);
+    useEffect(() => {
+        if(submit === 1)
+        {
+            // bla bla bla fetch 
+            console.log(submit);
+            setSubmit(0);
+        }
+    }, [submit]);
+
+    async function addEventHandler(event: React.FormEvent<HTMLFormElement>) {
+
+        event.preventDefault();
+        const form = event.currentTarget;
+        const raweventData = Object.fromEntries(new FormData(form));
+        const eventData: EventItem = {
+            title: raweventData.eventtitle as string || '',
+            event_date: new Date().toISOString().split('T')[0], 
+            max_participants: Number(raweventData.eventparticipants) || 0,
+            type: raweventData.eventtype as string || '',
+            price: raweventData.eventprice as string,
+            description: raweventData.description as string,
+            schedule: raweventData.eventschedule as string,
+        };
+        console.log(eventData);
+        setSubmit(1);
+    }
+    
     return (
         <div className={styles.addeventdiv}>
             <div className={styles.addeventform}>
                 <h1 className={styles.formtitle}>Create a new Event</h1>
-                <form className={styles.formcontainer}>
+                <form className={styles.formcontainer} onSubmit={addEventHandler}>
                     <div className={styles.inputfields}>
                         <div className={styles.griditem}>
                             <InputField id="eventtitle" iType="text" text="Event Title" />
@@ -68,9 +140,10 @@ export function AddEventForm() {
 
                         </div>
                         <div className={styles.griditem}>
-                            <InputField id="eventtype" iType="text" text="Choose Event Type" />
+                            <SelectField id="eventtype" text="Choose Event Type" options={Object.values(EventTypes)} />
                             <InputField id="eventparticipants" iType="text" text="Maximum Participants" />
                             <InputField id="eventschedule" iType="text" text="Schedule" />
+                            <InputField id="eventdate" iType="date" text="Event Date" />
                             <FileUploadField />
                         </div>
                     </div>
