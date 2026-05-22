@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import styles from '@/styles/addEvent.module.css'
+import styles from '@/styles/AddEvent.module.css'
 
 type InputType = {
     id: string;
@@ -11,7 +11,7 @@ export function InputField(type: InputType) {
     return (
         <>
             <div className={styles.inputdiv}>
-                <label htmlFor={type.id} className={styles.inputlabel}>{type.text}:</label>
+                <label htmlFor={type.id} className={styles.inputlabel}>{type.text}</label>
                 <input id={type.id} name={type.id} type={type.iType} placeholder={type.text} className={styles.inputfield}></input>
             </div>
         </>
@@ -25,15 +25,27 @@ export function AddEventBtn()
     )
 }
 
+export function FileUploadField() {
+    return (
+        <>
+            <label htmlFor='image' id='imageLabel' className={styles.filelabel}>
+                Add Event Image
+                <div className={styles.fileinputdiv}>
+                    <div className={styles.imagediv}></div>
+                </div>
+            </label>
+            <input type="file" id="image" name="imageFile" accept="image/png, image/jpeg" className={styles.customfileinput} />
+        </>
+    );
+}
+
 export function DescriptionField() {
     return (
         <>
-        <label htmlFor='description' id='descriptionLabel' className={styles.descriptionlabel}>Description</label>
+        <label htmlFor='description' id='descriptionLabel' className={styles.inputlabel}>Description</label>
             <textarea
                 id="description"
                 name="description"
-                rows={13}
-                cols={18}
                 placeholder='Enter event description'
                 className={styles.descriptionfield}
             /> 
@@ -59,7 +71,7 @@ export function AddEventForm() {
                             <InputField id="eventtype" iType="text" text="Choose Event Type" />
                             <InputField id="eventparticipants" iType="text" text="Maximum Participants" />
                             <InputField id="eventschedule" iType="text" text="Schedule" />
-
+                            <FileUploadField />
                         </div>
                     </div>
                     <div className={styles.addeventcontainer}>

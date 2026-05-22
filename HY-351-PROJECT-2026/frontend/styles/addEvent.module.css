@@ -72,8 +72,8 @@
 .inputdiv {
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    align-items: flex-start;
+    align-items:normal;
+    justify-content: center;
     padding: 0px;
     gap: 10px;
 }
@@ -86,36 +86,46 @@
 
 .inputfield {
     border: 1px solid #d7d7d7;
-    border-radius: 4px;
     padding: 8px 10px;
     background-color: #EBEBEB;
     border: 1px solid #ECECEC;
     border-radius: 10px;
-    width: 70%;
+    width: 100%;
 }
 
 .inputfields {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     height: 100%;
-    gap: 5px;
+    gap:40px;
 }
 
 .griditem {
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 10px;
-    margin: 5%;
-    margin-top: 0px;
 }
 
-.descriptionfield {
+
+.descriptionfield, .fileinputdiv {
     background: #EBEBEB;
     border: 1px solid #ECECEC;
     border-radius: 10px;
-    padding: 5px;
+    width: 100%;
+    min-height: 180px;
+    height: 100%;
     resize: none;
+    box-sizing: border-box;
+}
+
+.fileinputdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .addeventcontainer {
@@ -136,4 +146,28 @@
     font-size: larger;
     font-weight: bolder;
     border: none;
+}
+
+.filelabel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    height: 100%;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.customfileinput {
+    display: none;
+}
+
+.imagediv {
+    background: url('/images/addimage.png');
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-grow: 1;
+    cursor: pointer;
+    width: 100%;
 }
