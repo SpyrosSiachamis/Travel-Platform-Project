@@ -19,7 +19,7 @@ type EventItem = {
     preview_image?: string | null;
 };
 
-export enum EventTypes { 
+export enum EventTypes {
     Other = "Other",
     NightLife = "Night Life",
     City = "City",
@@ -97,35 +97,61 @@ type SelectType = {
     options: string[];
 };
 
+export async function addEvent(eventData: EventItem) {
+    try {
+        const response = await fetch('http://localhost:5000/events/add', {
+            method: "POST",
+            credentials: "include",
+            body: JSON.stringify(eventData),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        if (!response.ok) {
+            throw new Error('Failure adding event');
+        }
+        const result: EventItem = await response.json();
+        return result;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
 export function AddEventForm() {
     const [submit, setSubmit] = useState<number>(0);
+    const [eventInfo, setEventInfo] = useState<EventItem>({} as EventItem);
+
     useEffect(() => {
-        if(submit === 1)
-        {
-            // bla bla bla fetch 
-            console.log(submit);
-            setSubmit(0);
+        async function sendData() {
+            if (submit === 1) {
+                const result = await addEvent(eventInfo);
+                console.log("Event Created:", result);
+                setSubmit(0);
+            }
         }
-    }, [submit]);
+        sendData();
+    }, [submit, eventInfo])
 
     async function addEventHandler(event: React.FormEvent<HTMLFormElement>) {
-
         event.preventDefault();
         const form = event.currentTarget;
         const raweventData = Object.fromEntries(new FormData(form));
+
         const eventData: EventItem = {
             title: raweventData.eventtitle as string || '',
-            event_date: new Date().toISOString().split('T')[0], 
+            event_date: raweventData.eventdate as string || new Date().toISOString().split('T')[0],
             max_participants: Number(raweventData.eventparticipants) || 0,
             type: raweventData.eventtype as string || '',
-            price: raweventData.eventprice as string,
-            description: raweventData.description as string,
-            schedule: raweventData.eventschedule as string,
+            price: Number(raweventData.eventprice) || 0,
+            description: raweventData.description as string || '',
+            schedule: raweventData.eventschedule as string || '',
         };
-        console.log(eventData);
+
+        setEventInfo(eventData);
         setSubmit(1);
     }
-    
+
     return (
         <div className={styles.addeventdiv}>
             <div className={styles.addeventform}>
