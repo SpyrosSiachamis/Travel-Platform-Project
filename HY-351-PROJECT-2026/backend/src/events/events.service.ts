@@ -1,6 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { DatabaseService } from '../db/db.service';
 import { Event } from './event.model';
+import { AuthUser } from 'src/auth/auth.model';
+import { Session } from 'inspector/promises';
 @Injectable()
 export class EventsService {
     constructor(private readonly db: DatabaseService) {}
@@ -56,25 +58,25 @@ export class EventsService {
         `, [id]);
     }
 
-    async create(body: any) {
+    async create(event: Event) {
         return await this.db.query(`
             INSERT INTO events 
             (trip_creator_id, title, event_date, event_time, type, status, max_participants, price, description, schedule, address_id, rating, preview_image)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `, [
-            body.trip_creator_id || 1,
-            body.title,
-            body.event_date,
-            body.event_time || '10:00:00',
-            body.type,
-            body.status || 'upcoming',
-            body.max_participants,
-            body.price || 0,
-            body.description || '',
-            body.schedule || '',
-            body.address_id || 1,
-            body.rating || 0,
-            body.preview_image || null,
+            event.trip_creator_id || 1,
+            event.title,
+            event.event_date,
+            event.event_time || '10:00:00',
+            event.type,
+            event.status || 'upcoming',
+            event.max_participants,
+            event.price || 0,
+            event.description || '',
+            event.schedule || '',
+            event.address_id || 1,
+            event.rating || 0,
+            event.preview_image || null,
         ]);
     }
 }

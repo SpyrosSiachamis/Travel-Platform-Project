@@ -1,0 +1,173 @@
+.mainsection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 75px);
+    overflow-y: hidden;
+    padding: 0px;
+    position: relative;
+}
+
+.backgrounddiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('/images/koules.jpg');
+    background-size: cover;
+    filter: blur(2px);
+    width: 100%;
+    height: 100%;
+    height: calc(100vh - 75px);
+    z-index: 1;
+}
+
+.addeventdiv {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 75%;
+    max-width: 50%;
+    min-width: 500px;
+    background-color: white;
+    box-shadow: 0px 0px 8px black;
+    padding: 5px;
+    position: relative;
+    z-index: 2;
+}
+
+.addeventform {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.formtitle {
+    font-size: large;
+    font-family: 'Inter', 'Courier New', Courier, monospace;
+    font-weight: normal;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding: 0px;
+    border-bottom: 1px solid #ECECEC;
+}
+
+.formcontainer {
+    height: 100%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    gap: 20px;
+}
+
+.inputdiv {
+    display: flex;
+    flex-direction: column;
+    align-items:normal;
+    justify-content: center;
+    padding: 0px;
+    gap: 10px;
+}
+
+.inputlabel {
+    font-size: 0.9rem;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inputfield {
+    border: 1px solid #d7d7d7;
+    padding: 8px;
+    background-color: #EBEBEB;
+    border: 1px solid #ECECEC;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.inputfields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    gap:40px;
+}
+
+.griditem {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+
+.descriptionfield, .fileinputdiv {
+    background: #EBEBEB;
+    border: 1px solid #ECECEC;
+    border-radius: 10px;
+    width: 100%;
+    min-height: 180px;
+    height: 100%;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.fileinputdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.addeventcontainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.addeventbtn {
+    padding: 0px 102px;
+    gap: 19px;
+    width: 359px;
+    height: 40px;
+    background: #009951;
+    border-radius: 15px;
+    color: white;
+    font-size: larger;
+    font-weight: bolder;
+    border: none;
+}
+
+.filelabel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    height: 100%;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.customfileinput {
+    display: none;
+}
+
+.imagediv {
+    background: url('/images/addimage.png');
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-grow: 1;
+    cursor: pointer;
+    width: 100%;
+}
