@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Session, UnauthorizedException } from '@nestjs/common';
 import { EventsService } from './events.service';
 import { Event } from './event.model';
 
@@ -18,7 +18,9 @@ export class EventsController {
     }
 
     @Post('/add')
-    create(@Body() event: Event) {
+    create(@Body() event: Event, @Session() session: Record<string, any>) {
+        event.trip_creator_id = session.user?.user_id; 
+        if (!event.trip_creator_id) throw new UnauthorizedException('You must be logged in to create an event.');
         return this.eventsService.create(event);
     }
 }
