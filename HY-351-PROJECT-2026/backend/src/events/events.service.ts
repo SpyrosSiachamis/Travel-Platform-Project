@@ -58,25 +58,44 @@ export class EventsService {
         `, [id]);
     }
 
-    async create(event: Event) {
-        return await this.db.query(`
+    async create(event: Object, file: any, creatorID: number) {
+        console.log(file); // file moves to backend, couldnt find a way to put it in public/images
+        const raw = event as Record<string, string>;
+
+        const eventData: Event = {
+            trip_creator_id: creatorID,
+            title: raw.eventtitle,
+            event_date: raw.eventdate,
+            event_time: undefined,
+            type: raw.eventtype,
+            status: undefined,
+            max_participants: Number(raw.eventparticipants),
+            price: Number(raw.eventprice),
+            description: raw.description,
+            schedule: raw.eventschedule,
+            address_id: undefined,
+            rating: undefined,
+            preview_image: file ? `/images/${file.originalname}` : undefined,
+        };
+
+        return this.db.query(`
             INSERT INTO events 
             (trip_creator_id, title, event_date, event_time, type, status, max_participants, price, description, schedule, address_id, rating, preview_image)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         `, [
-            event.trip_creator_id || 1,
-            event.title,
-            event.event_date,
-            event.event_time || '10:00:00',
-            event.type,
-            event.status || 'upcoming',
-            event.max_participants,
-            event.price || 0,
-            event.description || '',
-            event.schedule || '',
-            event.address_id || 1,
-            event.rating || 0,
-            event.preview_image || null,
+            eventData.trip_creator_id || 1,
+            eventData.title,
+            eventData.event_date,
+            eventData.event_time || '10:00:00',
+            eventData.type,
+            eventData.status || 'upcoming',
+            eventData.max_participants,
+            eventData.price || 0,
+            eventData.description || '',
+            eventData.schedule || '',
+            eventData.address_id || 1,
+            eventData.rating || 0,
+            eventData.preview_image || null,
         ]);
     }
 }

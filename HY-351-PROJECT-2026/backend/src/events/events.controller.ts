@@ -1,10 +1,10 @@
-import { Controller, Get, Post, Body, Param, Session, UnauthorizedException } from '@nestjs/common';
+import { Controller, Get, Post, Body, Param, Session, UnauthorizedException, UseInterceptors, UploadedFile, ParseFilePipe, MaxFileSizeValidator, FileTypeValidator } from '@nestjs/common';
 import { EventsService } from './events.service';
-import { Event } from './event.model';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('events')
 export class EventsController {
-    constructor(private readonly eventsService: EventsService) {}
+    constructor(private readonly eventsService: EventsService) { }
 
     @Get()
     findAll() {
@@ -18,9 +18,19 @@ export class EventsController {
     }
 
     @Post('/add')
-    create(@Body() event: Event, @Session() session: Record<string, any>) {
-        event.trip_creator_id = session.user?.user_id; 
-        if (!event.trip_creator_id) throw new UnauthorizedException('You must be logged in to create an event.');
-        return this.eventsService.create(event);
+    @UseInterceptors(FileInterceptor('imageFile'))
+    create(@Body() event: Object, @Session() session: Record<string, any>, @UploadedFile(new ParseFilePipe({
+        validators: [
+            new MaxFileSizeValidator({ maxSize: 5000000 }),
+            new FileTypeValidator({ fileType: /(image\/jpeg|image\/png)$/ }),
+        ],
+    }),
+    )
+    file: any,) {
+        if (!session || !session.user) {
+            throw new UnauthorizedException('You must be logged in to create an event.');
+        }
+        const creatorid = parseInt(session.user.user_id.toString(), 10);
+        return this.eventsService.create(event, file, creatorid);
     }
 }

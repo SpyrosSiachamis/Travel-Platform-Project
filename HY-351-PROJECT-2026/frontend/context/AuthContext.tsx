@@ -85,7 +85,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 export function useAuth() {
     const context = useContext(AuthContext);
     if (context === undefined) {
-        throw new Error('useAuth should run in AuthProvider');
+        throw new Error('useauth should run in AuthProvider');
     }
     return context;
 }

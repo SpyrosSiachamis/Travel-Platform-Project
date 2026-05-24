@@ -97,15 +97,15 @@ type SelectType = {
     options: string[];
 };
 
-export async function addEvent(eventData: EventItem) {
+export async function addEvent(eventData: FormData | null) {
     try {
+        if (!eventData) {
+            throw new Error('Missing form data');
+        }
         const response = await fetch('http://localhost:5000/events/add', {
             method: "POST",
             credentials: "include",
-            body: JSON.stringify(eventData),
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            body: eventData,
         });
         if (!response.ok) {
             throw new Error('Failure adding event');
@@ -120,7 +120,7 @@ export async function addEvent(eventData: EventItem) {
 
 export function AddEventForm() {
     const [submit, setSubmit] = useState<number>(0);
-    const [eventInfo, setEventInfo] = useState<EventItem>({} as EventItem);
+    const [eventInfo, setEventInfo] = useState<FormData | null>(null);
 
     useEffect(() => {
         async function sendData() {
@@ -135,20 +135,8 @@ export function AddEventForm() {
 
     async function addEventHandler(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        const form = event.currentTarget;
-        const raweventData = Object.fromEntries(new FormData(form));
-
-        const eventData: EventItem = {
-            title: raweventData.eventtitle as string || '',
-            event_date: raweventData.eventdate as string || new Date().toISOString().split('T')[0],
-            max_participants: Number(raweventData.eventparticipants) || 0,
-            type: raweventData.eventtype as string || '',
-            price: Number(raweventData.eventprice) || 0,
-            description: raweventData.description as string || '',
-            schedule: raweventData.eventschedule as string || '',
-        };
-
-        setEventInfo(eventData);
+        const formData = new FormData(event.currentTarget);
+        setEventInfo(formData);
         setSubmit(1);
     }
 
