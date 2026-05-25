@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styles from '../styles/NavBar.module.css'
-import { useAuth, UserState } from '@/context/AuthContext';
+import { useAuth } from '@/context/AuthContext';
 
 type AuthUser = {
     user_id?: number;
