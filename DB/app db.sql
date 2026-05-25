@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: mysql
--- Generation Time: May 19, 2026 at 09:19 AM
+-- Generation Time: May 25, 2026 at 08:48 PM
 -- Server version: 8.0.46
 -- PHP Version: 8.3.26
 
@@ -76,7 +76,9 @@ INSERT INTO `events` (`event_id`, `trip_creator_id`, `title`, `event_date`, `eve
 (1, 1, 'Heraklion, Knossos Tour', '2026-06-20', '10:00:00', 'Cultural tour', 'upcoming', 50, 135.00, 'A guided tour at the Palace of Knossos and the surrounding historical area.', '10:00 Arrival, 10:30 Guided tour, 12:30 Free time, 13:00 End of tour.', 1, 4.80, '/images/knossos.jpg', '2026-05-19 08:55:18'),
 (2, 1, 'Guided Day Tour in Heraklion', '2026-06-22', '09:00:00', 'City tour', 'upcoming', 40, 25.00, 'A guided day tour in Heraklion with visits to important local landmarks.', '09:00 Meeting point, 09:30 Walking tour, 12:00 Museum area, 14:00 End.', 2, 4.50, '/images/heraklion.jpg', '2026-05-19 08:55:18'),
 (3, 1, 'Knossos Palace and Historical Heraklion City Tour', '2026-06-25', '11:00:00', 'Historical tour', 'upcoming', 35, 55.00, 'A combined tour of Knossos Palace and historical parts of Heraklion.', '11:00 Start, 12:00 Knossos tour, 15:00 Heraklion old city, 17:00 End.', 1, 4.70, '/images/oldcity.jpg', '2026-05-19 08:55:18'),
-(4, 3, 'Greek Food Walking Tour in Heraklion', '2026-06-27', '18:00:00', 'Food tour', 'upcoming', 25, 10.00, 'A short walking food tour through Heraklion, including local products and traditional tastes.', '18:00 Meeting point, 18:30 Market visit, 19:30 Tasting, 20:30 End.', 3, 4.90, '/images/foodtour.jpg', '2026-05-19 08:55:18');
+(4, 3, 'Greek Food Walking Tour in Heraklion', '2026-06-27', '18:00:00', 'Food tour', 'upcoming', 25, 10.00, 'A short walking food tour through Heraklion, including local products and traditional tastes.', '18:00 Meeting point, 18:30 Market visit, 19:30 Tasting, 20:30 End.', 3, 4.90, '/images/foodtour.jpg', '2026-05-19 08:55:18'),
+(8, 1, 'test1', '2026-05-28', '10:00:00', 'Other', 'upcoming', 10, 0.00, 'test description', '10am start', 1, 0.00, '/images/hike-preview.jpg', '2026-05-24 22:29:28'),
+(9, 1, 'test2', '2026-05-29', '10:00:00', 'Nature', 'upcoming', 10, 10.00, 'test2 description', '8am leave', 1, 0.00, '/images/hike-preview.jpg', '2026-05-24 22:46:31');
 
 -- --------------------------------------------------------
 
@@ -495,7 +497,7 @@ ALTER TABLE `addresses`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `event_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `event_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `event_content`
