@@ -1,0 +1,66 @@
+<mxfile host="Electron">
+  <diagram name="Page-1" id="LWVoEHIgdcVyGuXH9VBG">
+    <mxGraphModel dx="1276" dy="808" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2336" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cU49adkIA0k8HB_ilmj_-1" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=160;" value="Προβολή Λειτουργιών" vertex="1">
+          <mxGeometry height="380" width="800" x="350" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="cU49adkIA0k8HB_ilmj_-5" parent="cU49adkIA0k8HB_ilmj_-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Σύστημα Διαχείρισης Χρηστών" vertex="1">
+          <mxGeometry height="60" width="120" x="140" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="cU49adkIA0k8HB_ilmj_-7" parent="cU49adkIA0k8HB_ilmj_-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Σύστημα Ειδοποίησεων" vertex="1">
+          <mxGeometry height="60" width="120" x="10" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="cU49adkIA0k8HB_ilmj_-8" parent="cU49adkIA0k8HB_ilmj_-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Σύστημα Συμμετοχής, Ιστορικού Και Αγαπημένων" vertex="1">
+          <mxGeometry height="60" width="120" x="270" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="cU49adkIA0k8HB_ilmj_-11" parent="cU49adkIA0k8HB_ilmj_-1" style="whiteSpace=wrap;html=1;" value="Σύστημα Διαχείρισης Περιεχομένου" vertex="1">
+          <mxGeometry height="60" width="120" x="400" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="cU49adkIA0k8HB_ilmj_-12" parent="cU49adkIA0k8HB_ilmj_-1" style="line;strokeWidth=2;html=1;fontColor=#FF0000;labelBackgroundColor=#FF0000;strokeColor=#FFFFFF;" value="" vertex="1">
+          <mxGeometry height="10" width="800" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="cU49adkIA0k8HB_ilmj_-13" parent="cU49adkIA0k8HB_ilmj_-1" style="line;strokeWidth=2;html=1;strokeColor=#FFFFFF;" value="" vertex="1">
+          <mxGeometry height="10" width="800" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="cU49adkIA0k8HB_ilmj_-14" parent="cU49adkIA0k8HB_ilmj_-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Επιχειρησιακή Λογική" vertex="1">
+          <mxGeometry height="24" width="130" y="135" as="geometry" />
+        </mxCell>
+        <mxCell id="cU49adkIA0k8HB_ilmj_-15" parent="cU49adkIA0k8HB_ilmj_-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Επίπεδο Παρουσίασης" vertex="1">
+          <mxGeometry height="24" width="130" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cU49adkIA0k8HB_ilmj_-18" parent="cU49adkIA0k8HB_ilmj_-1" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" value="Βάση Δεδομένων" vertex="1">
+          <mxGeometry height="90" width="85" x="367.5" y="281" as="geometry" />
+        </mxCell>
+        <object label="Διεπαφή Web" Description="Περιλαμβάνει τις λειτουργίες Login, Προβολή Εκδηλώσεων, Συμμετοχή." id="cU49adkIA0k8HB_ilmj_-19">
+          <mxCell parent="cU49adkIA0k8HB_ilmj_-1" style="whiteSpace=wrap;html=1;" vertex="1">
+            <mxGeometry height="60" width="120" x="140" y="40" as="geometry" />
+          </mxCell>
+        </object>
+        <mxCell id="cU49adkIA0k8HB_ilmj_-21" parent="cU49adkIA0k8HB_ilmj_-1" style="whiteSpace=wrap;html=1;" value="Διεπαφή Κινητού" vertex="1">
+          <mxGeometry height="60" width="120" x="350" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cU49adkIA0k8HB_ilmj_-22" parent="cU49adkIA0k8HB_ilmj_-1" style="whiteSpace=wrap;html=1;" value="Διεπαφή Trip Creator" vertex="1">
+          <mxGeometry height="60" width="120" x="550" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cU49adkIA0k8HB_ilmj_-23" parent="cU49adkIA0k8HB_ilmj_-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Επίπεδο Δεδομένων" vertex="1">
+          <mxGeometry height="24" width="130" y="257" as="geometry" />
+        </mxCell>
+        <mxCell id="cU49adkIA0k8HB_ilmj_-6" parent="cU49adkIA0k8HB_ilmj_-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Σύστημα Διαχείρισης Εκδρομών" vertex="1">
+          <mxGeometry height="60" width="120" x="530" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="-nXPxUn_ctw05sg7sfYV-1" parent="cU49adkIA0k8HB_ilmj_-1" style="rounded=0;whiteSpace=wrap;html=1;" value="Σύστημα Προτάσεων" vertex="1">
+          <mxGeometry height="60" width="120" x="670" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="cU49adkIA0k8HB_ilmj_-48" parent="1" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" value="Εξωτερικό Σύστημα Παροχής Βίντεο" vertex="1">
+          <mxGeometry height="110" width="160" x="1180" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="YrfHs1Oqd6gtfLHeYrhr-1" parent="1" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;Εξωτερικό Σύστημα&amp;nbsp;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Επεξεργασίας Πληρωμής&lt;/font&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="120" width="180" x="1170" y="510" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

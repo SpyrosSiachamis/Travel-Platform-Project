@@ -48,7 +48,6 @@ export function NavLogout({ user }: { user: AuthUser }) {
         } catch (error) {
             console.error(error);
         }
-
     }
     return (
         <>
